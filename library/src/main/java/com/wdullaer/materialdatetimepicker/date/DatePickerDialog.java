@@ -19,17 +19,19 @@ package com.wdullaer.materialdatetimepicker.date;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
+
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
@@ -429,7 +431,8 @@ public class DatePickerDialog extends DialogFragment implements
         if (mAccentColor == -1) {
             mAccentColor = Utils.getAccentColorFromThemeIfAvailable(getActivity());
         }
-        if (mDatePickerHeaderView != null) mDatePickerHeaderView.setBackgroundColor(Utils.darkenColor(mAccentColor));
+        if (mDatePickerHeaderView != null)
+            mDatePickerHeaderView.setBackgroundColor(Utils.darkenColor(mAccentColor));
         view.findViewById(R.id.mdtp_day_picker_selected_date_layout).setBackgroundColor(mAccentColor);
 
         // Buttons can have a different color
@@ -874,6 +877,7 @@ public class DatePickerDialog extends DialogFragment implements
 
     /**
      * Provide a DateRangeLimiter for full control over which dates are enabled and disabled in the picker
+     *
      * @param dateRangeLimiter An implementation of the DateRangeLimiter interface
      */
     @SuppressWarnings("unused")
@@ -952,6 +956,7 @@ public class DatePickerDialog extends DialogFragment implements
 
     /**
      * Set which way the user needs to swipe to switch months in the MonthView
+     *
      * @param orientation The orientation to use
      */
     public void setScrollOrientation(ScrollOrientation orientation) {
@@ -960,6 +965,7 @@ public class DatePickerDialog extends DialogFragment implements
 
     /**
      * Get which way the user needs to swipe to switch months in the MonthView
+     *
      * @return SwipeOrientation
      */
     public ScrollOrientation getScrollOrientation() {
@@ -968,9 +974,10 @@ public class DatePickerDialog extends DialogFragment implements
 
     /**
      * Set which timezone the picker should use
-     *
+     * <p>
      * This has been deprecated in favor of setting the TimeZone using the constructor that
      * takes a Calendar object
+     *
      * @param timeZone The timezone to use
      */
     @SuppressWarnings("DeprecatedIsStillUsed")
@@ -985,6 +992,7 @@ public class DatePickerDialog extends DialogFragment implements
 
     /**
      * Set a custom locale to be used when generating various strings in the picker
+     *
      * @param locale Locale
      */
     public void setLocale(Locale locale) {
@@ -997,6 +1005,7 @@ public class DatePickerDialog extends DialogFragment implements
 
     /**
      * Return the current locale (default or other)
+     *
      * @return Locale
      */
     @Override
@@ -1021,6 +1030,7 @@ public class DatePickerDialog extends DialogFragment implements
 
     /**
      * Get a reference to the callback
+     *
      * @return OnDateSetListener the callback
      */
     @SuppressWarnings("unused")
@@ -1129,7 +1139,8 @@ public class DatePickerDialog extends DialogFragment implements
         if (mVibrate) mHapticFeedbackController.tryVibrate();
     }
 
-    @Override public TimeZone getTimeZone() {
+    @Override
+    public TimeZone getTimeZone() {
         return mTimezone == null ? TimeZone.getDefault() : mTimezone;
     }
 

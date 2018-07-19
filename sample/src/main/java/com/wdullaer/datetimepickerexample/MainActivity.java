@@ -1,6 +1,7 @@
 package com.wdullaer.datetimepickerexample;
 
 import android.os.Bundle;
+
 import com.google.android.material.tabs.TabLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,8 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     PickerAdapter adapter;
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         public Fragment getItem(int position) {
-            switch(position) {
+            switch (position) {
                 case 0:
                     return timePickerFragment;
                 case 1:
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         int getTitle(int position) {
-            switch(position) {
+            switch (position) {
                 case 0:
                     return R.string.tab_title_time;
                 case 1:

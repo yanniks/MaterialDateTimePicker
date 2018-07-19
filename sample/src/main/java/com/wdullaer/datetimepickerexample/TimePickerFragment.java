@@ -17,6 +17,8 @@ import com.wdullaer.materialdatetimepicker.time.Timepoint;
 
 import java.util.Calendar;
 
+import androidx.fragment.app.Fragment;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -136,10 +138,10 @@ public class TimePickerFragment extends Fragment implements TimePickerDialog.OnT
 
     @Override
     public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
-        String hourString = hourOfDay < 10 ? "0"+hourOfDay : ""+hourOfDay;
-        String minuteString = minute < 10 ? "0"+minute : ""+minute;
-        String secondString = second < 10 ? "0"+second : ""+second;
-        String time = "You picked the following time: "+hourString+"h"+minuteString+"m"+secondString+"s";
+        String hourString = hourOfDay < 10 ? "0" + hourOfDay : "" + hourOfDay;
+        String minuteString = minute < 10 ? "0" + minute : "" + minute;
+        String secondString = second < 10 ? "0" + second : "" + second;
+        String time = "You picked the following time: " + hourString + "h" + minuteString + "m" + secondString + "s";
         timeTextView.setText(time);
     }
 }
